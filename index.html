@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173548">
+  <meta name="description" content="Daiva Fauzani — data analyst portfolio featuring Python, SQL, Power BI, data visualization, and business analysis projects.">
+  <title>Daiva Fauzani — Data Analyst Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <style>
+    :root {
+      --navy: #173548;
+      --navy-2: #20475b;
+      --ink: #152a35;
+      --muted: #63747b;
+      --paper: #f7f7f2;
+      --white: #ffffff;
+      --line: #dce3df;
+      --blue: #347ee8;
+      --blue-soft: #eaf2ff;
+      --lime: #d7f36c;
+      --orange: #e17241;
+      --radius: 22px;
+      --shadow: 0 18px 45px rgba(20, 45, 55, .08);
+      --max: 1160px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(var(--max), calc(100% - 44px)); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--blue); text-transform: uppercase; font-weight: 800; font-size: .74rem; letter-spacing: .12em; }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: currentColor; display: inline-block; }
+    .section { padding: 96px 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 32px; }
+    h1,h2,h3,p { margin-top: 0; }
+    h1,h2,h3 { letter-spacing: -.04em; line-height: 1.1; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 13px 0 12px; }
+    .section-intro { color: var(--muted); max-width: 590px; margin: 0; }
+    .topbar { position: sticky; top: 0; z-index: 30; background: rgba(247,247,242,.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(220,227,223,.85); }
+    .nav { min-height: 76px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: -.03em; }
+    .brand-mark { width: 40px; height: 40px; border-radius: 13px; display: grid; place-items: center; background: var(--navy); color: var(--lime); font-size: .88rem; letter-spacing: -.07em; box-shadow: 0 5px 12px #17354825; }
+    .brand small { display: block; font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-top: 1px; }
+    .nav-links { display: flex; align-items: center; gap: 27px; color: #40545c; font-size: .91rem; font-weight: 650; }
+    .nav-links a:not(.nav-cta):hover { color: var(--blue); }
+    .nav-cta,.btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; font-weight: 750; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .nav-cta { background: var(--navy); color: #fff; padding: 12px 17px; }
+    .nav-cta:hover,.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(22,55,74,.18); }
+    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: 12px; background: white; padding: 9px 11px; font-size: 1.2rem; color: var(--navy); }
+    .hero { background: var(--navy); color: white; position: relative; overflow: hidden; padding: 88px 0 82px; }
+    .hero::before { content: ""; position: absolute; width: 590px; height: 590px; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; right: -160px; top: -260px; box-shadow: 0 0 0 65px rgba(255,255,255,.025), 0 0 0 130px rgba(255,255,255,.02); }
+    .hero-grid { display: grid; grid-template-columns: 1.07fr .93fr; gap: 60px; align-items: center; position: relative; }
+    .hero .eyebrow { color: var(--lime); }
+    .hero h1 { font-size: clamp(3.1rem, 6vw, 5.65rem); max-width: 690px; margin: 20px 0; letter-spacing: -.065em; }
+    .hero h1 span { color: var(--lime); }
+    .hero-copy { color: #c6d4d9; font-size: 1.06rem; max-width: 590px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { padding: 14px 19px; font-size: .92rem; }
+    .btn-primary { background: var(--lime); color: var(--navy); }
+    .btn-ghost { border: 1px solid rgba(255,255,255,.28); color: white; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 18px 24px; padding-top: 30px; margin-top: 34px; border-top: 1px solid rgba(255,255,255,.13); color: #d0dce0; font-size: .87rem; }
+    .hero-meta span { display: flex; gap: 8px; align-items: center; }
+    .dot { width: 7px; height: 7px; background: var(--lime); border-radius: 50%; display: inline-block; }
+    .hero-visual { background: #f2f5ef; color: var(--ink); padding: 20px; border-radius: 25px; box-shadow: 0 35px 90px rgba(0,0,0,.22); transform: rotate(1.2deg); }
+    .visual-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 3px 3px 16px; }
+    .visual-top strong { font-size: .9rem; }
+    .mini-tag { background: var(--blue-soft); color: #255eb3; border-radius: 999px; padding: 5px 9px; font-weight: 800; font-size: .65rem; }
+    .visual-kpis { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; }
+    .kpi { background: white; border: 1px solid #e2e8e3; border-radius: 15px; padding: 14px; }
+    .kpi label { display: block; color: #6b7b80; text-transform: uppercase; letter-spacing: .07em; font-size: .64rem; font-weight: 800; }
+    .kpi strong { display: block; font-size: clamp(1.5rem, 2.8vw, 2.2rem); letter-spacing: -.06em; line-height: 1.15; margin: 5px 0 4px; }
+    .kpi small { font-size: .68rem; color: #65777d; }
+    .visual-chart { background: #fff; border: 1px solid #e2e8e3; border-radius: 15px; margin-top: 10px; padding: 15px 14px 10px; }
+    .chart-title { font-weight: 800; font-size: .77rem; }
+    .chart-sub { font-size: .65rem; color: var(--muted); margin: 2px 0 10px; }
+    .chart-bars { display: flex; align-items: end; gap: 9px; height: 83px; border-bottom: 1px solid #e6ebe7; padding: 0 8px; }
+    .chart-bars i { display: block; flex: 1; border-radius: 5px 5px 0 0; background: var(--blue); min-width: 8px; }
+    .chart-bars i:nth-child(2n) { background: #a8c8fb; }
+    .chart-labels { display: flex; justify-content: space-between; color: #79888c; font-size: .57rem; padding: 6px 4px 0; }
+    .signal-row { display: flex; align-items: center; gap: 10px; padding-top: 13px; color: #42565e; font-size: .73rem; }
+    .signal-icon { display: grid; place-items: center; background: var(--lime); color: var(--navy); border-radius: 10px; width: 28px; height: 28px; font-weight: 900; }
+    .stats-strip { border-bottom: 1px solid var(--line); background: #fff; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+    .stat { padding: 25px 25px 24px 0; border-right: 1px solid var(--line); }
+    .stat:not(:first-child) { padding-left: 25px; }
+    .stat:last-child { border: 0; }
+    .stat strong { display: block; font-size: 1.5rem; letter-spacing: -.05em; }
+    .stat span { color: var(--muted); font-size: .82rem; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 58px; align-items: start; }
+    .about-card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 27px; box-shadow: var(--shadow); }
+    .about-card p { color: #52666e; margin-bottom: 0; }
+    .about-highlight { border-left: 4px solid var(--lime); padding: 3px 0 3px 18px; margin-top: 23px; font-weight: 700; color: var(--navy); }
+    .skills-wrap { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+    .skill { background: #fff; color: #38515c; border: 1px solid var(--line); border-radius: 999px; font-size: .82rem; font-weight: 700; padding: 8px 12px; }
+    .skill.featured { background: var(--blue-soft); border-color: #dce9ff; color: #275db0; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .project-card { background: white; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); transition: transform .22s ease, box-shadow .22s ease; }
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 25px 55px rgba(20,45,55,.13); }
+    .project-preview { position: relative; background: #e8edf0; aspect-ratio: 1.48; overflow: hidden; }
+    .project-preview img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform .45s ease; }
+    .project-card:hover .project-preview img { transform: scale(1.025); }
+    .project-index { position: absolute; top: 15px; left: 15px; color: white; background: var(--navy); padding: 7px 10px; border-radius: 9px; font-size: .7rem; font-weight: 850; letter-spacing: .08em; }
+    .project-body { padding: 24px; }
+    .project-type { color: var(--blue); text-transform: uppercase; letter-spacing: .1em; font-size: .68rem; font-weight: 850; }
+    .project-body h3 { font-size: 1.45rem; margin: 10px 0; }
+    .project-body p { color: var(--muted); font-size: .92rem; margin-bottom: 18px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+    .project-tags span { background: #f0f3f4; color: #50656e; padding: 5px 8px; border-radius: 7px; font-size: .7rem; font-weight: 750; }
+    .project-metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; padding: 16px 0; border-top: 1px solid #edf0ee; border-bottom: 1px solid #edf0ee; margin-bottom: 19px; }
+    .project-metrics strong { display: block; font-size: 1.06rem; letter-spacing: -.04em; }
+    .project-metrics small { display: block; color: var(--muted); font-size: .68rem; line-height: 1.35; }
+    .project-links { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; font-size: .82rem; font-weight: 800; }
+    .text-link { display: inline-flex; gap: 7px; align-items: center; color: var(--navy); }
+    .text-link:hover { color: var(--blue); }
+    .text-link .arrow { font-size: 1.1rem; transition: transform .2s ease; }
+    .text-link:hover .arrow { transform: translateX(3px); }
+    .project-wide { grid-column: 1/-1; display: grid; grid-template-columns: 1.05fr .95fr; }
+    .project-wide .project-preview { aspect-ratio: auto; min-height: 100%; }
+    .status { display: inline-flex; align-items: center; gap: 7px; padding: 6px 9px; border-radius: 999px; background: #fff4e7; color: #92501d; font-size: .68rem; font-weight: 850; margin: 0 0 12px; }
+    .status::before { content: ""; width: 6px; height: 6px; background: #e59a32; border-radius: 50%; }
+    .process-note { background: #eaf1ed; border-radius: 11px; padding: 11px 12px; color: #50655d; font-size: .77rem; margin-top: 14px; }
+    .timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .timeline-panel { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+    .timeline-panel h3 { font-size: 1.35rem; margin-bottom: 22px; }
+    .timeline-item { position: relative; padding-left: 21px; padding-bottom: 24px; border-left: 1px solid #d6e0dd; }
+    .timeline-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+    .timeline-item::before { content: ""; position: absolute; left: -5px; top: 5px; width: 9px; height: 9px; border: 2px solid var(--blue); background: white; border-radius: 50%; }
+    .timeline-item h4 { font-size: .95rem; margin: 0 0 5px; letter-spacing: -.02em; }
+    .timeline-item p { color: var(--muted); margin: 0; font-size: .82rem; }
+    .timeline-date { color: var(--blue); text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; font-weight: 850; margin-bottom: 5px; }
+    .education-tag { display: inline-block; border-radius: 7px; background: var(--blue-soft); color: #275db0; padding: 5px 8px; font-size: .67rem; font-weight: 800; margin-top: 8px; }
+    .cert-list { display: grid; gap: 10px; margin-top: 20px; }
+    .cert-item { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; padding-bottom: 10px; border-bottom: 1px solid #edf0ee; font-size: .82rem; }
+    .cert-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .cert-item span { color: var(--muted); white-space: nowrap; font-size: .75rem; }
+    .contact { background: var(--navy); color: white; position: relative; overflow: hidden; }
+    .contact::after { content: ""; position: absolute; right: -130px; bottom: -300px; width: 550px; height: 550px; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; box-shadow: 0 0 0 55px rgba(255,255,255,.025), 0 0 0 110px rgba(255,255,255,.02); }
+    .contact-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 55px; align-items: center; position: relative; z-index: 1; }
+    .contact .eyebrow { color: var(--lime); }
+    .contact h2 { max-width: 630px; }
+    .contact p { color: #c7d7dd; max-width: 540px; }
+    .contact-links { display: grid; gap: 12px; }
+    .contact-link { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 16px 18px; border: 1px solid rgba(255,255,255,.18); border-radius: 14px; background: rgba(255,255,255,.04); transition: background .2s; }
+    .contact-link:hover { background: rgba(255,255,255,.1); }
+    .contact-link span { color: #c7d7dd; font-size: .73rem; display: block; }
+    .contact-link strong { font-size: .94rem; }
+    .contact-link b { color: var(--lime); font-size: 1.2rem; }
+    footer { background: #102936; color: #acbec5; padding: 22px 0; font-size: .79rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+    .footer-inner span:last-child { color: #d7f36c; }
+    .back-top { position: fixed; right: 22px; bottom: 22px; z-index: 10; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 15px; background: var(--lime); color: var(--navy); box-shadow: 0 8px 24px #0f2a3930; font-size: 1.15rem; opacity: 0; pointer-events: none; transform: translateY(7px); transition: .2s; }
+    .back-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+    @media (max-width: 900px) {
+      .hero-grid { gap: 32px; grid-template-columns: 1fr .86fr; }
+      .about-grid { gap: 28px; }
+      .nav-links { gap: 16px; }
+      .project-wide { grid-template-columns: 1fr; }
+      .project-wide .project-preview { aspect-ratio: 1.48; }
+      .timeline { gap: 22px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(var(--max), calc(100% - 30px)); }
+      .section { padding: 70px 0; }
+      .nav { min-height: 68px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: calc(100% + 1px); left: 0; right: 0; padding: 16px 20px 21px; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 18px 22px #17354812; flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 11px 3px; }
+      .nav-links .nav-cta { text-align: center; margin-top: 7px; padding: 12px 17px; }
+      .hero { padding: 64px 0 58px; }
+      .hero-grid,.about-grid,.contact-grid { grid-template-columns: 1fr; gap: 38px; }
+      .hero h1 { font-size: clamp(3rem, 14vw, 4.45rem); }
+      .hero-visual { max-width: 520px; transform: none; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .stat { padding: 17px 12px 17px 0; border-bottom: 1px solid var(--line); }
+      .stat:not(:first-child) { padding-left: 13px; }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(3),.stat:nth-child(4) { border-bottom: 0; }
+      .section-head { display: block; }
+      .section-head .section-intro { margin-top: 12px; }
+      .project-grid,.timeline { grid-template-columns: 1fr; }
+      .project-wide { grid-column: auto; }
+      .project-wide .project-preview { aspect-ratio: 1.4; }
+      .project-body { padding: 20px; }
+      .timeline-panel { padding: 23px; }
+      .contact { padding: 72px 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Daiva Fauzani home">
+        <span class="brand-mark">DF</span>
+        <span>Daiva Fauzani<small>Data analyst portfolio</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a class="nav-cta" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow">Accounting × Information Systems</div>
+          <h1>Data with context.<br><span>Insights with purpose.</span></h1>
+          <p class="hero-copy">Hi, I'm Daiva — an aspiring data analyst with an accounting background. I turn raw data into clear findings, useful dashboards, and practical business recommendations.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-ghost" href="assets/Daiva-Fauzani-CV.pdf" target="_blank" rel="noopener">Download CV <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-meta">
+            <span><i class="dot"></i> Based in Semarang, Indonesia</span>
+            <span>Python · SQL · Excel · BI</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Illustrative analytics dashboard preview">
+          <div class="visual-top"><strong>Analytics snapshot</strong><span class="mini-tag">SELECTED INSIGHTS</span></div>
+          <div class="visual-kpis">
+            <div class="kpi"><label>Orders analyzed</label><strong>96.2K</strong><small>Olist public dataset</small></div>
+            <div class="kpi"><label>Product revenue</label><strong>R$13.2M</strong><small>Excluding shipping</small></div>
+            <div class="kpi"><label>Avg. review</label><strong>4.16/5</strong><small>Customer rating</small></div>
+            <div class="kpi"><label>Late deliveries</label><strong>6.8%</strong><small>Of delivered orders</small></div>
+          </div>
+          <div class="visual-chart">
+            <div class="chart-title">Revenue & customer experience</div>
+            <div class="chart-sub">A preview of metrics explored in the Olist case study</div>
+            <div class="chart-bars" aria-hidden="true"><i style="height:37%"></i><i style="height:50%"></i><i style="height:43%"></i><i style="height:63%"></i><i style="height:58%"></i><i style="height:73%"></i><i style="height:68%"></i><i style="height:91%"></i><i style="height:78%"></i><i style="height:100%"></i></div>
+            <div class="chart-labels"><span>Category trends</span><span>Illustrative graphic</span></div>
+          </div>
+          <div class="signal-row"><span class="signal-icon">↗</span><span><strong>From analysis to action</strong><br>Find patterns, explain the context, recommend next steps.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats-strip">
+      <div class="container stats-grid">
+        <div class="stat"><strong>96K+</strong><span>e-commerce orders analyzed</span></div>
+        <div class="stat"><strong>17,379</strong><span>hourly bike-share records</span></div>
+        <div class="stat"><strong>7 tables</strong><span>joined in e-commerce analysis</span></div>
+        <div class="stat"><strong>3 domains</strong><span>data · finance · operations</span></div>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="eyebrow">A little about me</div>
+          <h2>Numbers tell a story when you ask the right questions.</h2>
+          <p class="section-intro">I combine an accounting foundation with information systems and analytical thinking to help turn business questions into evidence-based decisions.</p>
+        </div>
+        <div class="about-card reveal">
+          <p>I hold a Diploma III in Accounting from Politeknik Negeri Semarang and am currently studying Information Systems at Universitas Dian Nuswantoro. My experience in finance administration and purchasing & receiving has taught me the importance of accurate records, reconciliation, and structured reporting.</p>
+          <p style="margin-top:14px">I'm now building deeper data analytics skills through projects involving Python, pandas, SQL, data visualization, and interactive dashboards. I enjoy connecting the technical work—cleaning, validating, and analyzing data—with the business context behind it.</p>
+          <div class="about-highlight">My approach: validate the data, make the insight understandable, and connect it to an action.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" style="background:#eef1ed">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Selected work</div><h2>Projects built around real questions.</h2></div>
+          <p class="section-intro">Public datasets and practical business scenarios, analyzed with a focus on data quality, useful metrics, and clear communication.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-preview"><img src="assets/bike-sharing-analysis.png" alt="Bike sharing demand analysis dashboard showing hourly demand, weather comparisons, and monthly trends" loading="lazy"><span class="project-index">PROJECT 01</span></div>
+            <div class="project-body">
+              <div class="project-type">Python · Pandas · Matplotlib · Streamlit</div>
+              <h3>Bike Sharing Demand Analysis</h3>
+              <p>Analyzed two years of Washington, D.C. bike-share data to understand demand by hour, day type, season, and weather—then translated patterns into fleet-readiness recommendations.</p>
+              <div class="project-tags"><span>Data cleaning</span><span>EDA</span><span>Dashboard</span><span>Business insight</span></div>
+              <div class="project-metrics"><div><strong>3.29M</strong><small>Total rentals</small></div><div><strong>+64.9%</strong><small>Year-over-year growth</small></div><div><strong>17:00</strong><small>Working-day peak</small></div></div>
+              <div class="project-links"><a class="text-link" href="https://github.com/daivafzn-sketch/bike-sharing-analysis" target="_blank" rel="noopener">View on GitHub <span class="arrow">↗</span></a><a class="text-link" href="https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset" target="_blank" rel="noopener">Dataset source <span class="arrow">↗</span></a></div>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-preview"><img src="assets/ecommerce-analysis.png" alt="E-commerce sales and customer satisfaction dashboard with order trend, category revenue, and delivery delay review charts" loading="lazy"><span class="project-index">PROJECT 02</span></div>
+            <div class="project-body">
+              <div class="project-type">Python · Pandas · E-commerce analytics</div>
+              <h3>E-Commerce Sales & Customer Satisfaction</h3>
+              <p>Joined seven Olist tables to analyze product revenue, monthly order trends, and the relationship between delivery delays and customer review scores.</p>
+              <div class="project-tags"><span>Joins</span><span>Data quality</span><span>Customer experience</span><span>Revenue analysis</span></div>
+              <div class="project-metrics"><div><strong>R$13.2M</strong><small>Product revenue</small></div><div><strong>4.16/5</strong><small>Average review</small></div><div><strong>6.8%</strong><small>Late deliveries</small></div></div>
+              <div class="project-links"><a class="text-link" href="https://github.com/daivafzn-sketch/ecommerce-sales-analysis" target="_blank" rel="noopener">View on GitHub <span class="arrow">↗</span></a><a class="text-link" href="https://www.kaggle.com/olistbr/brazilian-ecommerce" target="_blank" rel="noopener">Dataset source <span class="arrow">↗</span></a></div>
+            </div>
+          </article>
+          <article class="project-card project-wide reveal">
+            <div class="project-preview"><img src="assets/powerbi-dashboard-prototype.png" alt="Power BI dashboard design prototype for Olist e-commerce sales and delivery reliability" loading="lazy"><span class="project-index">PROJECT 03</span></div>
+            <div class="project-body">
+              <div class="project-type">Power BI · Data modeling · DAX planning</div>
+              <h3>E-Commerce Sales & Customer Experience Dashboard</h3>
+              <p>A Power BI dashboard concept using the real Olist public dataset. The design focuses on headline KPIs, product-category revenue, review scores by delivery delay, and actionable logistics recommendations.</p>
+              <div class="status">Dashboard design prototype</div>
+              <div class="project-tags"><span>Olist public dataset</span><span>KPI design</span><span>Data model plan</span><span>DAX guide included</span></div>
+              <div class="project-metrics"><div><strong>96,203</strong><small>Delivered orders in scope</small></div><div><strong>62%</strong><small>Revenue from top 10 categories</small></div><div><strong>2.27 vs 4.29</strong><small>Average review: late vs on-time</small></div></div>
+              <div class="project-links"><a class="text-link" href="assets/Daiva-Fauzani-Portfolio.pdf" target="_blank" rel="noopener">View portfolio PDF <span class="arrow">↗</span></a><a class="text-link" href="https://www.kaggle.com/olistbr/brazilian-ecommerce" target="_blank" rel="noopener">Dataset source <span class="arrow">↗</span></a></div>
+              <div class="process-note">Status is stated transparently: this is a dashboard design prototype and build plan, not a published interactive Power BI report or a completed .pbix file.</div>
+            </div>
+          </article>
+          <article class="project-card project-wide reveal">
+            <div class="project-preview" style="display:grid;place-items:center;background:linear-gradient(135deg,#173548,#2a6179);padding:34px;color:white;min-height:270px"><div style="border:1px solid #ffffff45;border-radius:22px;padding:25px;width:100%;max-width:390px;background:#ffffff0a"><div class="eyebrow" style="color:#d7f36c">Operations system</div><div style="font-size:1.65rem;font-weight:850;letter-spacing:-.04em;line-height:1.1;margin:16px 0">Inventory Information System</div><div style="color:#d0dce0;font-size:.88rem">Sales · Purchases · Stock tracking</div><div style="display:flex;gap:8px;margin-top:21px"><span style="background:#d7f36c;color:#173548;border-radius:8px;padding:7px 10px;font-size:.7rem;font-weight:800">Excel VBA</span><span style="border:1px solid #ffffff50;border-radius:8px;padding:7px 10px;font-size:.7rem;font-weight:800">Published project</span></div></div></div>
+            <div class="project-body">
+              <div class="project-type">Microsoft Excel · Visual Basic for Applications</div>
+              <h3>Inventory System for Sales & Purchases</h3>
+              <p>Designed an Excel VBA-based system for Pandan Arum Plant Shop to record sales transactions, purchase activity, and stock levels in a structured workflow.</p>
+              <div class="project-tags"><span>Process improvement</span><span>Inventory records</span><span>Transaction tracking</span></div>
+              <p style="font-size:.82rem;margin-bottom:0">This project connects my accounting background with practical system design for a small business.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal"><div><div class="eyebrow">Career & learning</div><h2>Experience that shapes my approach.</h2></div><p class="section-intro">A mix of finance, operations, community work, and continuing education.</p></div>
+        <div class="timeline">
+          <div class="timeline-panel reveal">
+            <h3>Experience</h3>
+            <div class="timeline-item"><div class="timeline-date">Oct 2025 – Present</div><h4>Member, Data Division · DOSCOM</h4><p>Dinus Open-source Community, Semarang. Participates in data-related initiatives and learning activities.</p></div>
+            <div class="timeline-item"><div class="timeline-date">Oct 2025 – Present</div><h4>Core Team · Google Developer Group on Campus</h4><p>Universitas Dian Nuswantoro. Supports technology events and programs for the campus developer community.</p></div>
+            <div class="timeline-item"><div class="timeline-date">Jun – Jul 2025</div><h4>Finance Administration Intern</h4><p>Dinas Komunikasi, Informatika, Statistik dan Persandian Kota Semarang. Supported finance administration and reporting.</p></div>
+            <div class="timeline-item"><div class="timeline-date">Mar – Jun 2025</div><h4>Purchasing & Receiving Intern</h4><p>Hotel Tentrem Semarang. Supported purchasing, receiving administration, and related reporting.</p></div>
+          </div>
+          <div class="timeline-panel reveal">
+            <h3>Education</h3>
+            <div class="timeline-item"><div class="timeline-date">Sep 2025 – Dec 2027 · Expected</div><h4>Bachelor's Degree, Information Systems</h4><p>Universitas Dian Nuswantoro</p><span class="education-tag">In progress</span></div>
+            <div class="timeline-item"><div class="timeline-date">Sep 2022 – Sep 2025</div><h4>Diploma III, Accounting</h4><p>Politeknik Negeri Semarang</p><span class="education-tag">Completed</span></div>
+            <h3 style="margin-top:31px">Selected certifications</h3>
+            <div class="cert-list">
+              <div class="cert-item"><strong>Belajar Fundamental Analisis Data</strong><span>Dicoding · 2026</span></div>
+              <div class="cert-item"><strong>Belajar Dasar SQL</strong><span>Dicoding · 2026</span></div>
+              <div class="cert-item"><strong>Memulai Pemrograman dengan Python</strong><span>Dicoding · 2026</span></div>
+              <div class="cert-item"><strong>Data Analytics Certificate</strong><span>RevoU · 2025</span></div>
+              <div class="cert-item"><strong>Teknisi Akuntansi Pratama</strong><span>BNSP · 2024</span></div>
+              <div class="cert-item"><strong>Brevet Pajak A & B</strong><span>Tax Center Polines · 2024</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" style="padding-top:0">
+      <div class="container about-grid">
+        <div class="reveal"><div class="eyebrow">Toolkit</div><h2>Tools are useful when they answer a question.</h2><p class="section-intro">My toolkit combines analytical workflows, visualization, and the accounting fundamentals needed to interpret business results.</p></div>
+        <div class="reveal">
+          <h3 style="font-size:1.06rem;margin-bottom:0">Data analysis & programming</h3>
+          <div class="skills-wrap"><span class="skill featured">Python</span><span class="skill featured">pandas</span><span class="skill">matplotlib</span><span class="skill featured">SQL</span><span class="skill">Jupyter Notebook</span></div>
+          <h3 style="font-size:1.06rem;margin:25px 0 0">Reporting & visualization</h3>
+          <div class="skills-wrap"><span class="skill featured">Microsoft Excel</span><span class="skill">Excel VBA</span><span class="skill">Streamlit</span><span class="skill">Power BI · project development</span><span class="skill">Tableau · learning</span></div>
+          <h3 style="font-size:1.06rem;margin:25px 0 0">Core strengths</h3>
+          <div class="skills-wrap"><span class="skill">Data cleaning</span><span class="skill">Exploratory data analysis</span><span class="skill">Data visualization</span><span class="skill">Business insight</span><span class="skill">Financial reporting</span><span class="skill">Accounting</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal"><div class="eyebrow">Let's connect</div><h2>Have a question, opportunity, or interesting dataset?</h2><p>I'm open to data analytics internships, collaborative projects, and opportunities where careful analysis can help people make better decisions.</p><div class="hero-actions"><a class="btn btn-primary" href="mailto:daiva.fzn@gmail.com">Email me <span aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="assets/Daiva-Fauzani-Portfolio.pdf" target="_blank" rel="noopener">Portfolio PDF <span aria-hidden="true">↗</span></a></div></div>
+        <div class="contact-links reveal">
+          <a class="contact-link" href="mailto:daiva.fzn@gmail.com"><div><span>Email</span><strong>daiva.fzn@gmail.com</strong></div><b>↗</b></a>
+          <a class="contact-link" href="https://linkedin.com/in/daivafauzani" target="_blank" rel="noopener"><div><span>Connect professionally</span><strong>LinkedIn</strong></div><b>↗</b></a>
+          <a class="contact-link" href="https://github.com/daivafzn-sketch" target="_blank" rel="noopener"><div><span>Explore code & notebooks</span><strong>GitHub</strong></div><b>↗</b></a>
+          <a class="contact-link" href="assets/Daiva-Fauzani-CV.pdf" target="_blank" rel="noopener"><div><span>PDF document</span><strong>Download my CV</strong></div><b>↓</b></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Daiva Fauzani · Built with care and curiosity.</span><span>Data with context. Insights with purpose.</span></div></footer>
+  <a href="#home" class="back-top" id="backTop" aria-label="Back to top">↑</a>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      menuToggle.textContent = open ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
+      menuToggle.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => backTop.classList.toggle('visible', window.scrollY > 500), { passive: true });
+    const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('in-view'); revealObserver.unobserve(entry.target); }
+    }), { threshold: 0.10 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
